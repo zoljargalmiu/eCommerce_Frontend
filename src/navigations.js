@@ -1,13 +1,8 @@
 export const adminNav = [
   {
-    path: "/users",
+    path: "/",
     label: "Users",
     icon: "users",
-  },
-  {
-    path: "/",
-    label: "Clubs",
-    icon: "bus",
   },
   {
     path: "/products",
@@ -16,23 +11,18 @@ export const adminNav = [
   },
 ];
 
-export const ownerNav = [
+export const sellerNav = [
   {
     path: "/",
-    label: "My Clubs",
+    label: "Add Products",
     icon: "book-reader",
-  },
-  {
-    path: "/players",
-    label: "Players",
-    icon: "owners",
   },
 ];
 
-export const playerNav = [
+export const buyerNav = [
   {
     path: "/",
-    label: "My Clubs",
+    label: "Shopping Card",
     icon: "book-reader",
   },
 ];

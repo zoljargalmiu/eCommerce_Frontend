@@ -2,12 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { Layout } from "antd";
 import { PrivateRoute, VerticalMenu } from "../";
-// import logo_new from "../../assets/images/logo_new.png";
-// import logo from "../../assets/images/logo.png";
-import logo_new from "../../assets/images/pngegg.png";
 import logo from "../../assets/images/pngegg.png";
 import { connect, useSelector } from "react-redux";
-import { adminRoutes, ownerRoutes, playerRoutes } from "../../routes";
+import { adminRoutes, sellerRoutes, buyerRoutes } from "../../routes";
 import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
 
 const { Content, Footer, Sider } = Layout;
@@ -20,24 +17,15 @@ const RouteContainer = ({ user, ...rest }) => {
   useEffect(() => {
     let routes = [];
     if (loggingIn) {
-      // const userRoles = userData.roles;
       const userRoles = userData.role;
-      // userRoles.map((role) => {
-      console.log("userRole: " + userRoles);
-      switch (userRoles) {
-        case "CLUBOWNER":
-          routes.push(...ownerRoutes);
-        // return;
-        case "PLAYER":
-          routes.push(...playerRoutes);
-        // return;
-        case "ADMIN":
-          routes.push(...adminRoutes);
-        // return;
-        default:
-        // return;
+
+      if (userRoles == "SELLER") {
+        routes.push(...sellerRoutes);
+      } else if (userRoles == "BUYER") {
+        routes.push(...buyerRoutes);
+      } else if (userRoles == "ADMIN") {
+        routes.push(...adminRoutes);
       }
-      // });
     }
 
     setMainRouters(routes);
@@ -52,11 +40,11 @@ const RouteContainer = ({ user, ...rest }) => {
             <Sider collapsed={collapsed} width={200}>
               <a href="/" className="logo">
                 <span className="logo-sm">
-                  {!collapsed && <img src={logo_new} height={55} />}
+                  {!collapsed && <img src={logo} height={55} />}
                   {collapsed && <img src={logo} height={55} />}
                 </span>
                 <span className="logo-lg">
-                  {!collapsed && <img src={logo_new} height={55} />}
+                  {!collapsed && <img src={logo} height={55} />}
                   {collapsed && <img src={logo} height={55} />}
                 </span>
               </a>

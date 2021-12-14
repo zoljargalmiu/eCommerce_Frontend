@@ -13,9 +13,7 @@ async function login(username, password) {
     userName: username,
     password: password,
   }).then((result) => {
-    // eslint-disable-next-line no-undef
     let isSecure = false;
-    // eslint-disable-next-line no-undef
     if (window.location.protocol === "https:") {
       isSecure = true;
     }
@@ -36,7 +34,6 @@ function getUserData(token) {
 }
 
 function logout() {
-  // remove user from local storage to log user out
   localStorage.removeItem("user");
   cookies.remove("Token");
   localStorage.removeItem("Token");

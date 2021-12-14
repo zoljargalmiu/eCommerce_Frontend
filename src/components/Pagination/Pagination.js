@@ -52,23 +52,6 @@ function Pagination({
         subContainerClassName={"pages pagination"}
         activeClassName={"active"}
       />
-      {/* <ul className="pagination pagination-rounded justify-content-center mb-0">
-        {current > 1 ? (
-          <li className="page-item">
-            <a className="page-link" href="#" onClick={() => prevAction()}>
-              <i className="mdi mdi-chevron-left"></i>
-            </a>
-          </li>
-        ) : null}
-        {pages}
-        {current < totalPages ? (
-          <li className="page-item">
-            <a className="page-link" href="#" onClick={() => nextAction()}>
-              <i className="mdi mdi-chevron-right"></i>
-            </a>
-          </li>
-        ) : null}
-      </ul> */}
     </div>
   );
 }

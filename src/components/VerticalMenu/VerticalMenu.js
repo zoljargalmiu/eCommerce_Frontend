@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Menu } from "antd";
 import { connect, useSelector } from "react-redux";
-import { adminNav, ownerNav, playerNav } from "../../navigations";
+import { adminNav, sellerNav, buyerNav } from "../../navigations";
 import { Icon } from "..";
 import { NavLink } from "react-router-dom";
 
@@ -20,23 +20,15 @@ function VerticalMenu() {
     let navs = [];
     console.log("userData" + userData);
     if (loggingIn) {
-      // const userRoles = userData.roles;
       const userRoles = userData.role;
-      // userRoles.map((role) => {
-      switch (userRoles) {
-        case "CLUBOWNER":
-          navs.push(...ownerNav);
-        // return;
-        case "PLAYER":
-          navs.push(...playerNav);
-        // return;
-        case "ADMIN":
-          navs.push(...adminNav);
-        // return;
-        default:
-        // return;
+
+      if (userRoles == "SELLER") {
+        navs.push(...sellerNav);
+      } else if (userRoles == "BUYER") {
+        navs.push(...buyerNav);
+      } else if (userRoles == "ADMIN") {
+        navs.push(...adminNav);
       }
-      // });
 
       setMainNavs(
         Array.from(new Set(navs.map((item) => item.path))).map((path) => {

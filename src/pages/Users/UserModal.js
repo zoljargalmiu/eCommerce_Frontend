@@ -103,15 +103,6 @@ function UserModal({
       name: values.name,
       userName: values.userName,
       status: values.status,
-      // phone: values.phone,
-      // firstName: values.firstName,
-      // lastName: values.lastName,
-      // bloodType: null,
-      // birthDate: null,
-      // gender: null,
-      // emergencyContactNumber: null,
-      // roles: [3],
-      // clubs: values.club,
     })
       .then((result) => {
         if (result.status === 200) {

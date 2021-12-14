@@ -46,20 +46,20 @@ function Users() {
   }, []);
 
   const fetchGetRoles = () => {
-    API.get("/roles").then((result) => {
-      if (result.status === 200) {
-        console.log(result.data);
-        setRoles(result.data);
-      }
-    });
+    // API.get("/roles").then((result) => {
+    //   if (result.status === 200) {
+    //     console.log(result.data);
+    //     setRoles(result.data);
+    //   }
+    // });
   };
 
   const fetchGetClubs = () => {
-    API.get("club/all").then((result) => {
-      if (result.status === 200) {
-        setClubs(result.data);
-      }
-    });
+    // API.get("club/all").then((result) => {
+    //   if (result.status === 200) {
+    //     setClubs(result.data);
+    //   }
+    // });
   };
 
   const fetchData = (currentPage) => {
